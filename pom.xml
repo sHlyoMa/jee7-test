@@ -17,18 +17,6 @@
         <module>ear</module>
     </modules>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>javax</groupId>
-                <artifactId>javaee-api</artifactId>
-                <version>7.0</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <dependencies>
         <dependency>
             <groupId>javax</groupId>
@@ -79,5 +67,4 @@
             </plugins>
         </pluginManagement>
     </build>
-
 </project>

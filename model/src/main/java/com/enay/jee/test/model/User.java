@@ -1,12 +1,26 @@
 package com.enay.jee.test.model;
 
-/**
- * Created by Enya on 6/18/2017.
- */
+import javax.persistence.*;
+
+@Entity
+@NamedQueries(
+        @NamedQuery(name = "User.findAll", query = "select u from User u")
+)
 public class User {
 
+    @Id
+    @GeneratedValue
+    private int id;
     private String name;
     private int age;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
