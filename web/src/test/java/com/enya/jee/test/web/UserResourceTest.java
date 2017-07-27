@@ -17,15 +17,15 @@ public class UserResourceTest {
 
     @org.junit.Test
     public void getUser() throws Exception {
-        Future<Response> e = es.submit(new UserResourceClient().getUser());
-        System.out.println(e.get().readEntity(String.class));
-        es.submit(new UserResourceClient().addUser());
-        es.submit(new UserResourceClient().addUser());
-        es.submit(new UserResourceClient().addUser());
-        e = es.submit(new UserResourceClient().getUser());
-        System.out.println(e.get().readEntity(String.class));
-        e = es.submit(new UserResourceClient().getAll());
-        System.out.println(e.get().readEntity(new GenericType<List<User>>(){}));
+//        Future<Response> e = es.submit(new UserResourceClient().getUser());
+//        System.out.println(e.get().readEntity(String.class));
+//        es.submit(new UserResourceClient().addUser());
+//        es.submit(new UserResourceClient().addUser());
+//        es.submit(new UserResourceClient().addUser());
+//        e = es.submit(new UserResourceClient().getUser());
+//        System.out.println(e.get().readEntity(String.class));
+//        e = es.submit(new UserResourceClient().getAll());
+//        System.out.println(e.get().readEntity(new GenericType<List<User>>(){}));
     }
 
     @org.junit.Test
