@@ -29,8 +29,27 @@
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
-    </dependencies>
+        <dependency>
+            <groupId>org.wildfly</groupId>
+            <artifactId>wildfly-ee</artifactId>
+            <version>10.1.0.Final</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.wildfly</groupId>
+            <artifactId>wildfly-security</artifactId>
+            <version>10.1.0.Final</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.wildfly</groupId>
+            <artifactId>wildfly-undertow</artifactId>
+            <version>10.1.0.Final</version>
+            <scope>provided</scope>
+        </dependency>
 
+
+    </dependencies>
     <build>
         <pluginManagement>
             <plugins>
@@ -48,25 +67,35 @@
                     <version>2.10.1</version>
                     <configuration>
                         <defaultLibBundleDir>lib</defaultLibBundleDir>
+                        <includeLibInApplicationXml>true</includeLibInApplicationXml>
+                        <initializeInOrder>true</initializeInOrder>
                         <modules>
                             <jarModule>
                                 <groupId>com.enya.jee.test</groupId>
                                 <artifactId>model</artifactId>
                             </jarModule>
+                            <ejbModule>
+                                <groupId>com.enya.jee.test</groupId>
+                                <artifactId>dao</artifactId>
+                            </ejbModule>
+                            <ejbModule>
+                                <groupId>com.enya.jee.test</groupId>
+                                <artifactId>service</artifactId>
+                            </ejbModule>
                             <webModule>
                                 <groupId>com.enya.jee.test</groupId>
                                 <artifactId>web</artifactId>
                                 <contextRoot>/web</contextRoot>
                             </webModule>
-                            <ejbModule>
-                                <groupId>com.enya.jee.test</groupId>
-                                <artifactId>service</artifactId>
-                            </ejbModule>
-                            <ejbModule>
-                                <groupId>com.enya.jee.test</groupId>
-                                <artifactId>dao</artifactId>
-                            </ejbModule>
                         </modules>
+                        <security>
+                            <security-role>
+                                <role-name>user</role-name>
+                            </security-role>
+                            <security-role>
+                                <role-name>admin</role-name>
+                            </security-role>
+                        </security>
                     </configuration>
                 </plugin>
             </plugins>
